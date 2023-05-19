@@ -41,14 +41,14 @@ var (
 	BITSIZE = 64
 )
 
-func Show(f [][]float64) {
-	// for r := 0; r < len(f); r++ {
-	// 	fmt.Println(f[r])
-	// }
+type Printable interface {
+	int64 | float64 | string
+}
 
-	for row := 0; row < len(f); row++ {
-		for column := 0; column < len(f[row]); column++ {
-			fmt.Printf("%3v", f[row][column])
+func Show[T Printable](t [][]T) {
+	for row := 0; row < len(t); row++ {
+		for column := 0; column < len(t[row]); column++ {
+			fmt.Printf("%3v", t[row][column])
 		}
 		fmt.Print("\n")
 	}

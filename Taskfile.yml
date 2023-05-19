@@ -4,7 +4,7 @@ tasks:
   build:
     desc: Build CLI App
     cmds:
-    - GOFLAGS=-mod=mod go build -o bin/mla main.go
+    - GOFLAGS=-mod=mod go build -o ./../bin/mla main.go
     
   run:
     desc: Run CLI App
