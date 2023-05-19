@@ -54,11 +54,11 @@ func Show[T Printable](t [][]T) {
 	}
 }
 
-func ConvertCSV(f string) ([][]float64, error) {
-	file, err := os.Open(f)
+func ConvertCSV(filename string) ([][]float64, error) {
+	file, err := os.Open(filename)
 	defer file.Close()
 	if err != nil {
-		return nil, errors.New("cannot open source file " + f + "\n")
+		return nil, errors.New("cannot open source file " + filename + "\n")
 	}
 	csvReader := csv.NewReader(file)
 	linearEquations := make([][]float64, 0)
